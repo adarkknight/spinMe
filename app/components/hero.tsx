@@ -5,19 +5,19 @@ import Button from "./button";
 import Image from "next/image";
 
 function getTimeOfDay() {
-    const currentHour = new Date().getHours();
-    switch (true) {
-      case currentHour >= 5 && currentHour < 12:
-        return 'Morning';
-      case currentHour >= 12 && currentHour < 18:
-        return 'Afternoon';
-      default:
-        return 'Evening';
-    }
+  const currentHour = new Date().getHours();
+  switch (true) {
+    case currentHour >= 5 && currentHour < 12:
+      return 'Morning';
+    case currentHour >= 12 && currentHour < 18:
+      return 'Afternoon';
+    default:
+      return 'Evening';
   }
+}
 
-  const timeOfDay = getTimeOfDay();
-  
+const timeOfDay = getTimeOfDay();
+
 function Hero() {
   const recordPlayer = require('../../public/record_player.png')
   const [isModalOpen, setIsModalOpen] = React.useState(false);
@@ -32,17 +32,17 @@ function Hero() {
         <div className="hero-content flex-col lg:flex-row">
           {!isModalOpen && (
             <Image
-            src={recordPlayer}
-            className="w-48 rounded-lg"
-            alt="record player"
-          />
+              src={recordPlayer}
+              className="w-48 rounded-lg"
+              alt="record player"
+            />
           )}
           <div className="text-center">
             {!isModalOpen && (
               <div>
                 <h1 className="text-3xl font-inter font-bold">Good {timeOfDay}!</h1>
                 <p className="font-inter text-sm py-2">Click the button to get a record recommendation</p>
-                <Button onClick={toggleModal} text="Hey Ho, Let's Go!"/>
+                <Button onClick={toggleModal} text="Hey Ho, Let's Go!" />
               </div>
 
             )
