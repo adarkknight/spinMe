@@ -5,7 +5,7 @@ import Button from "./button";
 interface Props {
     onClose: () => void;
 }
-const Recommendation: React.FC<Props> = ({ onClose }) => {
+const Recommendation = ({ onClose }: Props) => {
     console.log('this is onclose', onClose);
     const albumImage = require('../../public/ramones1.png');
     const artist = 'Ramones';
