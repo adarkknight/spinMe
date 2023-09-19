@@ -2,7 +2,8 @@ import Image from 'next/image'
 
 export default function Home() {
   return (
-   <main className="min-h-screen flex flex-col items-center">
+   <main>
+    <h1>I don't even want to be around anymore</h1>
    </main>
   )
 }
