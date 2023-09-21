@@ -1,7 +1,7 @@
 'use client'
 import React from "react";
 import Image from "next/image";
-import Button from "./button";
+import Button from "./components/button";
 
 interface Props {
     onClose: () => void;
@@ -16,7 +16,7 @@ interface AlbumInfo {
     cover_image: string;
 }
 const Recommendation = ({ onClose }: Props) => {
-    const albumImage = require('../../public/ramones1.png');
+    const albumImage = require('../public/ramones1.png');
     const artistName = 'Ramones';
     const albumName = 'Ramones';
 

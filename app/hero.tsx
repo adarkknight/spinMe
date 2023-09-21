@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Recommendation from "./recommendation";
-import Button from "./button";
+import Button from "./components/button";
 import Image from "next/image";
 
 function getTimeOfDay() {
@@ -19,7 +19,7 @@ function getTimeOfDay() {
 const timeOfDay = getTimeOfDay();
 
 function Hero() {
-  const recordPlayer = require('../../public/record_player.png')
+  const recordPlayer = require('../public/record_player.png')
   const [isModalOpen, setIsModalOpen] = React.useState(false);
 
   const toggleModal = () => {
