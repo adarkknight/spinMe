@@ -16,9 +16,13 @@ function getTimeOfDay() {
   }
 }
 
+interface Props {
+  data: Object;
+}
+
 const timeOfDay = getTimeOfDay();
 
-function Hero() {
+function Hero({data}: Props) {
   const recordPlayer = require('../public/record_player.png')
   const [isModalOpen, setIsModalOpen] = React.useState(false);
 
@@ -48,7 +52,7 @@ function Hero() {
             )
             }
             {isModalOpen && (
-              <Recommendation onClose={toggleModal} />
+              <Recommendation onClose={toggleModal} data={data}/>
             )}
           </div>
         </div>
