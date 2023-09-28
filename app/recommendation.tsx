@@ -8,8 +8,7 @@ interface Props {
     data: [];
 }
 
-const Recommendation = ({ onClose, data}: Props) => {
-
+const Recommendation = ({ onClose, data }: Props) => {
     const randomInfo = Math.floor(Math.random() * data.length);
     const randomAlbum = data[randomInfo];
     const albumImage = randomAlbum.coverImage;

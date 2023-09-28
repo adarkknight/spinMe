@@ -10,7 +10,7 @@ import Hero from './hero'
 //       title: string;
 //       artists?: (ArtistsEntity)[] | null;
 //     }
-    
+
 async function fetchData() {
   const url = `https://api.discogs.com/users/adarkknight/collection/folders/1/releases?token=${process.env.DISCOGS_TOKEN}`;
   const options = {
@@ -22,14 +22,14 @@ async function fetchData() {
   const data = await response.json();
   const releaseInfo = data.releases;
 
-const formattedData = releaseInfo.map((item) => {
-  return {
-    artist: item.basic_information.artists[0].name,
-    title: item.basic_information.title,
-    coverImage: item.basic_information.cover_image,
-  }
-})
-   return formattedData;
+  const formattedData = releaseInfo.map((item) => {
+    return {
+      artist: item.basic_information.artists[0].name,
+      title: item.basic_information.title,
+      coverImage: item.basic_information.cover_image,
+    }
+  })
+  return formattedData;
 
 
 }
@@ -37,8 +37,8 @@ const formattedData = releaseInfo.map((item) => {
 export default async function Home() {
   const data = await fetchData();
   return (
-   <main>
-    <Hero data={data}/>
-   </main>
+    <main>
+      <Hero data={data} />
+    </main>
   )
 }
