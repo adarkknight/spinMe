@@ -1,17 +1,18 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+
+# spinMe
+Welcome to spinMe, the webapp that will work with your [Discogs](https://www.discogs.com/) vinyl collection to help you find something to listen to[^1]!
+
 
 ## Getting Started
+1. clone the repository
+```git clone [git@github.com:adarkknight/spinMe.git]```
 
-First, run the development server:
+2. Install dependencies
+```npm install```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
+3. Run the project
+```npm run dev```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) and click on the button to get a recommendation!
 
-
+[^1]: This project is a WIP, so the Discogs feature is currently unavailable and returns a hardcoded album.

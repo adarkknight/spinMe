@@ -1,15 +1,23 @@
 import Image from 'next/image'
 import Hero from './hero'
 
-// interface ArtistsEntity {
-//   name: string;
-// }
+interface ResultItem {
+  basic_information: {
+    artists: (ArtistsEntity)[];
+    title: string;
+    cover_image: string;
+  }
+}
 
-// interface AlbumInfo {
-//       cover_image: string;
-//       title: string;
-//       artists?: (ArtistsEntity)[] | null;
-//     }
+interface ArtistsEntity {
+  name: string;
+}
+
+interface AlbumInfo {
+      coverImage: string;
+      title: string;
+      artist: string;
+    }
 
 async function fetchData() {
   const url = `https://api.discogs.com/users/adarkknight/collection/folders/1/releases?token=${process.env.DISCOGS_TOKEN}`;
@@ -22,7 +30,7 @@ async function fetchData() {
   const data = await response.json();
   const releaseInfo = data.releases;
 
-  const formattedData = releaseInfo.map((item) => {
+  const formattedData = releaseInfo.map((item: ResultItem): AlbumInfo => {
     return {
       artist: item.basic_information.artists[0].name,
       title: item.basic_information.title,
