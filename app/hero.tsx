@@ -31,8 +31,8 @@ function Hero({ data }: Props) {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center">
-      <div className="hero min-h-[50vh] bg-base-200">
+    <div className="flex flex-col items-center justify-center mt-9">
+      <div className="hero min-h-[50vh] bg-base-200 rounded-lg">
         <div className="hero-content flex-col lg:flex-row">
           {!isModalOpen && (
             <Image
