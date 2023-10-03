@@ -14,10 +14,10 @@ interface ArtistsEntity {
 }
 
 interface AlbumInfo {
-      coverImage: string;
-      title: string;
-      artist: string;
-    }
+  coverImage: string;
+  title: string;
+  artist: string;
+}
 
 async function fetchData() {
   const url = `https://api.discogs.com/users/adarkknight/collection/folders/1/releases?token=${process.env.DISCOGS_TOKEN}`;
@@ -38,8 +38,6 @@ async function fetchData() {
     }
   })
   return formattedData;
-
-
 }
 
 export default async function Home() {

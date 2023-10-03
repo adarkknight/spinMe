@@ -17,7 +17,7 @@ function getTimeOfDay() {
 }
 
 interface Props {
-  data: Object;
+  data: [];
 }
 
 const timeOfDay = getTimeOfDay();

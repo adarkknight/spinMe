@@ -5,8 +5,14 @@ import Button from "./components/button";
 
 interface Props {
     onClose: () => void;
-    data: [];
+    data: AlbumInfo[];
 }
+
+interface AlbumInfo {
+    coverImage: string;
+    title: string;
+    artist: string;
+  }
 
 const Recommendation = ({ onClose, data }: Props) => {
     const randomInfo = Math.floor(Math.random() * data.length);
