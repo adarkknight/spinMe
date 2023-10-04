@@ -31,13 +31,13 @@ function Hero({ data }: Props) {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center mt-9">
-      <div className="hero min-h-[50vh] bg-base-200 rounded-lg">
+    <div className="flex flex-col items-center justify-center mt-6">
+      <div className="hero h-80 w-80 bg-base-200 rounded-lg">
         <div className="hero-content flex-col lg:flex-row">
           {!isModalOpen && (
             <Image
               src={recordPlayer}
-              className="w-48 rounded-lg"
+              className="w-32 rounded-lg"
               alt="record player"
             />
           )}

@@ -23,13 +23,13 @@ const Recommendation = ({ onClose, data }: Props) => {
 
     return (
 
-        <div className="fixed inset-0 flex items-center justify-center">
+        <div className="fixed inset-0 flex items-center justify-center mt-6">
             <div className="modal-overlay"></div>
             <div className="modal-container">
                 <div className="modal-content">
-                    <div className="card w-50 bg-neutral">
-                        <Image width="100" height="100" src={albumImage} className="w-28 rounded-lg mx-auto mt-6" alt="album" />
-                        <div className="card-body text-white">
+                    <div className="card w-80 h-80 bg-neutral shadow-xl">
+                        <Image width="100" height="100" src={albumImage} className="w-28 rounded-lg mx-auto mt-3" alt="album" />
+                        <div className="card-body items-center text-white">
                             <div className="font-inter text-sm font-semibold justify-center" >We think you should spin</div>
                             <div className="flex-col justify-center items-center">
                                 <p className="font-inter text-sm font-light italic">{albumName}</p>
@@ -37,10 +37,10 @@ const Recommendation = ({ onClose, data }: Props) => {
                                 <p className="font-inter font-extrabold text-lg">{artistName}</p>
                             </div>
                             <div className="card-actions justify-end">
+                            <Button onClick={onClose} text="Close" />
                             </div>
                         </div>
                     </div>
-                    <Button onClick={onClose} text="Close" />
                 </div>
             </div>
         </div>
