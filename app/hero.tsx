@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Recommendation from "./recommendation";
-import Button from "./button";
+import Button from "./components/button";
 import Image from "next/image";
 
 function getTimeOfDay() {
@@ -16,10 +16,14 @@ function getTimeOfDay() {
   }
 }
 
+interface Props {
+  data: [];
+}
+
 const timeOfDay = getTimeOfDay();
 
-function Hero() {
-  const recordPlayer = require('../../public/record_player.png')
+function Hero({ data }: Props) {
+  const recordPlayer = require('../public/record_player.png')
   const [isModalOpen, setIsModalOpen] = React.useState(false);
 
   const toggleModal = () => {
@@ -27,32 +31,29 @@ function Hero() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center">
-      <div className="hero min-h-[50vh] bg-base-200">
-        <div className="hero-content flex-col lg:flex-row">
-          {!isModalOpen && (
+    <div className="flex flex-col items-center justify-center mt-6">
+      {!isModalOpen && (
+        <div className="hero h-80 w-80 bg-base-200 rounded-lg">
+          <div className="hero-content flex-col lg:flex-row">
             <Image
               src={recordPlayer}
-              className="w-48 rounded-lg"
+              className="w-32 rounded-lg"
               alt="record player"
             />
-          )}
-          <div className="text-center">
-            {!isModalOpen && (
+            <div className="text-center">
+
               <div>
                 <h1 className="text-3xl font-inter font-bold">Good {timeOfDay}!</h1>
                 <p className="font-inter text-sm py-2">Click the button to get a record recommendation</p>
                 <Button onClick={toggleModal} text="Hey Ho, Let's Go!" />
               </div>
-
-            )
-            }
-            {isModalOpen && (
-              <Recommendation onClose={toggleModal} />
-            )}
+            </div>
           </div>
         </div>
-      </div>
+      )}
+      {isModalOpen && (
+        <Recommendation onClose={toggleModal} data={data} />
+      )}
     </div>
 
   )
