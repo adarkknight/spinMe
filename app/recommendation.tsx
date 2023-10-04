@@ -12,7 +12,7 @@ interface AlbumInfo {
     coverImage: string;
     title: string;
     artist: string;
-  }
+}
 
 const Recommendation = ({ onClose, data }: Props) => {
     const randomInfo = Math.floor(Math.random() * data.length);
@@ -23,23 +23,16 @@ const Recommendation = ({ onClose, data }: Props) => {
 
     return (
 
-        <div className="fixed inset-0 flex items-center justify-center mt-6">
-            <div className="modal-overlay"></div>
-            <div className="modal-container">
-                <div className="modal-content">
-                    <div className="card w-80 h-80 bg-neutral shadow-xl">
-                        <Image width="100" height="100" src={albumImage} className="w-28 rounded-lg mx-auto mt-3" alt="album" />
-                        <div className="card-body items-center text-neutral-content">
-                            <div className="font-inter text-sm font-semibold justify-center" >We think you should spin</div>
-                            <div className="flex-col justify-center items-center">
-                                <p className="font-inter text-sm font-light italic">{albumName}</p>
-                                <p className="font-inter text-sm">by</p>
-                                <p className="font-inter font-extrabold text-lg">{artistName}</p>
-                            </div>
-                            <div className="card-actions justify-end">
-                            <Button onClick={onClose} text="Close" />
-                            </div>
-                        </div>
+        <div className="inset-0 flex items-center justify-center">
+            <div className="card bg-neutral shadow-xl">
+                <Image width="100" height="100" src={albumImage} className="w-28 rounded-lg mx-auto mt-3" alt="album" />
+                <div className="card-body flex flex-col items-center justify-center text-neutral-content">
+                    <h2 className="font-inter text-sm font-semibold" >We think you should spin</h2>
+                    <p className="font-inter text-sm font-light italic">{albumName}</p>
+                    <p className="font-inter text-sm">by</p>
+                    <p className="font-inter font-extrabold text-lg">{artistName}</p>
+                    <div className="card-actions">
+                        <Button onClick={onClose} text="Close" />
                     </div>
                 </div>
             </div>
