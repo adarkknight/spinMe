@@ -29,7 +29,7 @@ const Recommendation = ({ onClose, data }: Props) => {
                 <div className="modal-content">
                     <div className="card w-80 h-80 bg-neutral shadow-xl">
                         <Image width="100" height="100" src={albumImage} className="w-28 rounded-lg mx-auto mt-3" alt="album" />
-                        <div className="card-body items-center text-white">
+                        <div className="card-body items-center text-neutral-content">
                             <div className="font-inter text-sm font-semibold justify-center" >We think you should spin</div>
                             <div className="flex-col justify-center items-center">
                                 <p className="font-inter text-sm font-light italic">{albumName}</p>
