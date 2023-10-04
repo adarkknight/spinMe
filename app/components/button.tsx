@@ -6,7 +6,7 @@ interface ButtonProps {
 }
 const Button = ({ onClick, text }: ButtonProps) => {
   return (
-    <div className="btn btn-primary btn-sm text-xs modal-close-button font-inter italic font-bold mt-2" onClick={onClick}>{text}</div>
+    <div className="btn btn-primary btn-sm text-xs modal-close-button font-inter italic font-bold" onClick={onClick}>{text}</div>
   )
 }
 

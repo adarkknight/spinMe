@@ -24,14 +24,13 @@ const Recommendation = ({ onClose, data }: Props) => {
     return (
 
         <div className="inset-0 flex items-center justify-center">
-            <div className="card bg-neutral shadow-xl">
-                <Image width="100" height="100" src={albumImage} className="w-28 rounded-lg mx-auto mt-3" alt="album" />
-                <div className="card-body flex flex-col items-center justify-center text-neutral-content">
+            <div className="card  bg-neutral shadow-xl w-auto h-80">
+                <Image width="100" height="100" src={albumImage} className="w-32 rounded-lg mx-auto mt-6" alt="album" />
+                <div className="card-body flex flex-col gap-0 items-center justify-center text-neutral-content">
                     <h2 className="font-inter text-sm font-semibold" >We think you should spin</h2>
-                    <p className="font-inter text-sm font-light italic">{albumName}</p>
-                    <p className="font-inter text-sm">by</p>
-                    <p className="font-inter font-extrabold text-lg">{artistName}</p>
-                    <div className="card-actions">
+                    <h3 className="font-inter text-sm font-light italic">{albumName}</h3>
+                    <h2 className="font-inter font-extrabold text-lg">{artistName}</h2>
+                    <div className="card-actions mt-3">
                         <Button onClick={onClose} text="Close" />
                     </div>
                 </div>
