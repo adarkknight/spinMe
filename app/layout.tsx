@@ -19,7 +19,6 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="retro">
       <body className="min-h-screen flex flex-col items-center">
-        <Navbar />
         {children}
         <Footer />
       </body>

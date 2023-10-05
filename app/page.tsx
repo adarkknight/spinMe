@@ -1,50 +1,19 @@
-import Image from 'next/image'
-import Hero from './hero'
+import React from 'react'
+import Link from 'next/link'
 
-interface ResultItem {
-  basic_information: {
-    artists: (ArtistsEntity)[];
-    title: string;
-    cover_image: string;
-  }
+const WelcomePage = () => {
+    return (
+        <div className="hero min-h-screen" style={{backgroundImage: 'url(/blur.png)'}}>
+        <div className="hero-overlay bg-opacity-60"></div>
+        <div className="hero-content text-center text-neutral-content">
+          <div className="max-w-md">
+            <h1 className="mb-5 text-5xl font-bold">Welcome to spinMe</h1>
+            <p className="mb-5">We'll help you pick a record to play.</p>
+            <Link href="/home" className="btn btn-primary">Hey Ho, Let's Go!</Link>
+          </div>
+        </div>
+      </div>
+    )
 }
 
-interface ArtistsEntity {
-  name: string;
-}
-
-interface AlbumInfo {
-  coverImage: string;
-  title: string;
-  artist: string;
-}
-
-async function fetchData() {
-  const url = `https://api.discogs.com/users/adarkknight/collection/folders/1/releases?token=${process.env.DISCOGS_TOKEN}`;
-  const options = {
-    headers: {
-      "User-Agent": "SpinMe/0.1",
-    },
-  };
-  const response = await fetch(url, options);
-  const data = await response.json();
-  const releaseInfo = data.releases;
-
-  const formattedData = releaseInfo.map((item: ResultItem): AlbumInfo => {
-    return {
-      artist: item.basic_information.artists[0].name,
-      title: item.basic_information.title,
-      coverImage: item.basic_information.cover_image,
-    }
-  })
-  return formattedData;
-}
-
-export default async function Home() {
-  const data = await fetchData();
-  return (
-    <main>
-      <Hero data={data} />
-    </main>
-  )
-}
+export default WelcomePage

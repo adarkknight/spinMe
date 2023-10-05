@@ -1,6 +1,6 @@
 import React from 'react'
 
-const LoginPage = () => {
+const WelcomePage = () => {
     return (
         <div className="hero min-h-screen" style={{backgroundImage: 'url(/blur.png)'}}>
         <div className="hero-overlay bg-opacity-60"></div>
@@ -15,4 +15,4 @@ const LoginPage = () => {
     )
 }
 
-export default LoginPage
+export default WelcomePage
