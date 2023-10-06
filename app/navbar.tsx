@@ -3,8 +3,8 @@ import React from 'react'
 import Link from 'next/link';
 const Navbar = () => {
     return (
-        <div className="navbar bg-secondary text-neutral-content min-h-0">
-        <div className="flex-1">
+        <div className="navbar bg-secondary text-neutral-content min-h-0 p-0">
+        <div className="flex-1 p-1">
         <div className="font-inter normal-case font-extrabold text-xl">spinMe</div>
         </div>
         <div className="flex-none gap-2">
