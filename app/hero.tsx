@@ -26,9 +26,23 @@ const timeOfDay = getTimeOfDay();
 function Hero({ data }: Props) {
   const recordPlayer = require('../public/record_player.png')
   const [isModalOpen, setIsModalOpen] = React.useState(false);
-  const [albumData, setAlbumData] = React.useState(data);
+  const [albumData, setAlbumData] = React.useState<any[]>(data);
+  const initialState = data;
 
   const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
+  };
+
+  const childToParent = (childData: number) => {
+    setAlbumData((prevItems: any[]) => {
+      if (prevItems.length === 1) {
+        setAlbumData(initialState);
+      }
+      const newArray = [...prevItems];
+      newArray.splice(childData, 1);
+      return newArray;
+    });
+
     setIsModalOpen(!isModalOpen);
   };
 
@@ -54,7 +68,7 @@ function Hero({ data }: Props) {
         </div>
       )}
       {isModalOpen && (
-        <Recommendation onClose={toggleModal} data={albumData} />
+        <Recommendation childToParent={childToParent} data={albumData} />
       )}
     </div>
 

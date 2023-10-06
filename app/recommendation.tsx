@@ -4,7 +4,7 @@ import Image from "next/image";
 import Button from "./components/button";
 
 interface Props {
-    onClose: () => void;
+    childToParent: (childData: number) => void;
     data: AlbumInfo[];
 }
 
@@ -14,8 +14,7 @@ interface AlbumInfo {
     artist: string;
 }
 
-const Recommendation = ({ onClose, data }: Props) => {
-    console.log('this is data in rec', data);
+const Recommendation = ({ childToParent, data }: Props) => {
     const randomInfo = Math.floor(Math.random() * data.length);
     const randomAlbum = data[randomInfo];
     const albumImage = randomAlbum.coverImage;
@@ -32,7 +31,7 @@ const Recommendation = ({ onClose, data }: Props) => {
                     <h3 className="font-inter text-sm font-light italic">{albumName}</h3>
                     <h2 className="font-inter font-extrabold text-lg">{artistName}</h2>
                     <div className="card-actions mt-3">
-                        <Button onClick={onClose} text="Close" />
+                        <Button onClick={() => { childToParent(randomInfo) }} text="Close" />
                     </div>
                 </div>
             </div>
