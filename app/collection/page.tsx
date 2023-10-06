@@ -1,6 +1,7 @@
 import React from 'react'
 import getAlbumData from '../api/getAlbumData'
 import { sort } from 'fast-sort';
+import Image from 'next/image';
 
 interface Album {
     artist: string;
@@ -31,7 +32,7 @@ export default async function Collection() {
                         <td>
                             <div className="avatar">
                                 <div className="mask mask-squircle w-12 h-12">
-                                    <img src={album.coverImage} />
+                                    <Image src={album.coverImage} width='100' height='100' alt='album'></Image>
                                 </div>
                             </div>
                         </td>
