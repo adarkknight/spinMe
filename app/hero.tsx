@@ -45,7 +45,7 @@ function Hero({ data }: Props) {
               <div>
                 <h1 className="text-3xl font-inter font-bold">Good {timeOfDay}!</h1>
                 <p className="font-inter text-sm py-2">Click the button to get a record recommendation</p>
-                <Button onClick={toggleModal} text="Spin Me" />
+                <Button onClick={toggleModal} text="Hey Ho, Let's Go!" />
               </div>
             </div>
           </div>

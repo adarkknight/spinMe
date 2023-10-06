@@ -9,7 +9,7 @@ const WelcomePage = () => {
           <div className="max-w-md">
             <h1 className="mb-5 text-5xl font-bold">Welcome to spinMe</h1>
             <p className="mb-5">We'll help you pick a record to play.</p>
-            <Link href="/home" className="btn btn-primary">Hey Ho, Let's Go!</Link>
+            <Link href="/home" className="btn btn-primary">Login</Link>
           </div>
         </div>
       </div>
