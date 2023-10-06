@@ -20,7 +20,6 @@ interface Props {
   data: [];
 }
 
-
 const timeOfDay = getTimeOfDay();
 
 function Hero({ data }: Props) {
@@ -33,13 +32,13 @@ function Hero({ data }: Props) {
     setIsModalOpen(!isModalOpen);
   };
 
-  const childToParent = (childData: number) => {
+  const updateAlbumData = (index: number) => {
     setAlbumData((prevItems: any[]) => {
       if (prevItems.length === 1) {
         setAlbumData(initialState);
       }
       const newArray = [...prevItems];
-      newArray.splice(childData, 1);
+      newArray.splice(index, 1);
       return newArray;
     });
 
@@ -68,7 +67,7 @@ function Hero({ data }: Props) {
         </div>
       )}
       {isModalOpen && (
-        <Recommendation childToParent={childToParent} data={albumData} />
+        <Recommendation updateAlbumData={updateAlbumData} data={albumData} />
       )}
     </div>
 

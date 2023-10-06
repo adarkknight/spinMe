@@ -1,6 +1,7 @@
 "use client";
 import React from 'react'
 import Link from 'next/link';
+import Image from 'next/image';
 const Navbar = () => {
     return (
         <div className="navbar bg-secondary text-neutral-content min-h-0 p-0">
@@ -11,7 +12,7 @@ const Navbar = () => {
           <div className="dropdown dropdown-end">
             <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
               <div className="w-10 rounded-full">
-                <img src="/avatar.png" />
+                <Image src="/avatar.png" width='100' height='100' alt='avatar'></Image>
               </div>
             </label>
             <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow-md menu menu-sm dropdown-content bg-base-100 rounded-box w-40 font-inter normal-case text-neutral">
