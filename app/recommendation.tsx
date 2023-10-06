@@ -15,6 +15,7 @@ interface AlbumInfo {
 }
 
 const Recommendation = ({ onClose, data }: Props) => {
+    console.log('this is data in rec', data);
     const randomInfo = Math.floor(Math.random() * data.length);
     const randomAlbum = data[randomInfo];
     const albumImage = randomAlbum.coverImage;
