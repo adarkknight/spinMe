@@ -14,7 +14,7 @@ const Navbar = () => {
                 <img src="/avatar.png" />
               </div>
             </label>
-            <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52 font-inter normal-case text-neutral">
+            <ul tabIndex={0} className="mt-3 z-[1] p-2 shadow-md menu menu-sm dropdown-content bg-base-100 rounded-box w-40 font-inter normal-case text-neutral">
               <li>
                 <a className="justify-between">
                   Collection
