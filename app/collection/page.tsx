@@ -12,7 +12,9 @@ export default async function Collection() {
     const data: Album[] = await getAlbumData();
     const sortedData = sort(data).asc(a => a.artist);
     return (
+
         <div className="overflow-x-auto">
+            <h1 className="font-extrabold text-2xl ml-4 mt-4">Record Collection</h1>
             <table className='table'>
                 <thead>
                     <tr>
@@ -36,7 +38,6 @@ export default async function Collection() {
                                 </div>
                             </div>
                         </td>
-
                         <td>{album.artist}</td>
                         <td>{album.title}</td>
                     </tr>)}
