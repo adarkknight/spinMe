@@ -13,7 +13,7 @@ export default async function Collection() {
     const sortedData = sort(data).asc(a => a.artist);
     return (
 
-        <div className="overflow-x-auto">
+        <div className="overflow-auto">
             <h1 className="font-extrabold text-2xl ml-4 mt-4">Record Collection</h1>
             <table className='table'>
                 <thead>
@@ -30,7 +30,7 @@ export default async function Collection() {
                     </tr>
                 </thead>
                 <tbody>
-                    {sortedData.map(album => <tr key={album.title}>
+                    {sortedData.map((album, index) => <tr key={index}>
                         <td>
                             <div className="avatar">
                                 <div className="mask mask-squircle w-12 h-12">
