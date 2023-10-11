@@ -15,4 +15,5 @@ Welcome to spinMe, the webapp that will work with your [Discogs](https://www.dis
 
 Open [http://localhost:3000](http://localhost:3000) and click on the button to get a recommendation!
 
-[^1]: This project is a WIP, so the Discogs feature is currently unavailable and returns a hardcoded album.
+[^1]: This project is a WIP, so the Discogs feature is currently unavailable.
+In order to see a working demo, visit [spinMe](https://spinme.onrender.com).
