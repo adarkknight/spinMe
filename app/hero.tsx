@@ -17,7 +17,13 @@ function getTimeOfDay() {
 }
 
 interface Props {
-  data: [];
+  data: AlbumInfo[];
+}
+
+interface AlbumInfo {
+  artist: string;
+  title: string;
+  coverImage: string;
 }
 
 const timeOfDay = getTimeOfDay();
