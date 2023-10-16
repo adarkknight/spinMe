@@ -18,7 +18,7 @@ interface AlbumInfo {
     artist: string;
 }
 
-const getAlbumData = async function () {
+const getAlbumData = function () {
     // const url = `https://api.discogs.com/users/adarkknight/collection/folders/1/releases?per_page=${process.env.PER_PAGE}&token=${process.env.DISCOGS_TOKEN}`;
     // const options = {
     //     headers: {
