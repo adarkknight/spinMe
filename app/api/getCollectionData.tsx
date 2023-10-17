@@ -16,8 +16,16 @@ interface AlbumInfo {
     artist: string;
 }
 
-const getAlbumData = async function () {
-    const url = `https://api.discogs.com/users/adarkknight/collection/folders/1/releases?per_page=${process.env.PER_PAGE_MAX}&token=${process.env.DISCOGS_TOKEN}`;
+interface PaginationInfo {
+    page: string,
+    pages: number,
+    items: number,
+}
+
+const getCollectionData = async function (page: string) {
+    let dataArray = [];
+    const url = `https://api.discogs.com/users/adarkknight/collection/folders/1/releases?page=${page}&per_page=${process.env.PER_PAGE_MIN}&sort=artist&sort_order=asc&token=${process.env.DISCOGS_TOKEN}`;
+
     const options = {
         headers: {
             "User-Agent": "SpinMe/0.1",
@@ -27,7 +35,12 @@ const getAlbumData = async function () {
     const response = await fetch(url, options);
     const data = await response.json();
     const releaseInfo = data.releases;
-
+    const paginationData: PaginationInfo = {
+        page: data.pagination.page,
+        pages: data.pagination.pages,
+        items: data.pagination.items
+    };
+   
     const formattedData = releaseInfo.map((item: ResultItem): AlbumInfo => {
         return {
             artist: item.basic_information.artists[0].name,
@@ -35,7 +48,10 @@ const getAlbumData = async function () {
             coverImage: item.basic_information.cover_image,
         }
     })
-    return formattedData;
+
+    dataArray = [paginationData, formattedData];
+
+    return dataArray;
 }
 
-export default getAlbumData;
+export default getCollectionData;

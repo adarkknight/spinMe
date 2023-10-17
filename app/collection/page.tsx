@@ -1,5 +1,6 @@
 import React from 'react'
-import getAlbumData from '../api/getAlbumData'
+// import getAlbumData from '../api/getAlbumData'
+import getCollectionData from '../api/getCollectionData';
 import { sort } from 'fast-sort';
 import Image from 'next/image';
 import Pagination from '../components/pagination';
@@ -8,11 +9,21 @@ interface Album {
     title: string;
     coverImage: string;
 }
-export default async function Collection({searchParams}: {searchParams: {page: string}}) {
-    const data: Album[] = await getAlbumData();
-    const sortedData = sort(data).asc(a => a.artist);
-    return (
 
+interface Pagination {
+    page: number,
+    pages: number,
+    items: number,
+}
+
+export default async function Collection({ searchParams }: { searchParams: { page: string } }) {
+    const page = searchParams.page;
+    const data = await getCollectionData(page);
+    const paginationData: Pagination = data[0];
+    const albumData: Album[] = data[1];
+    const sortedData = sort(albumData).asc(a => a.artist);
+    return (
+        <>
         <div className="overflow-auto">
             <h1 className="font-extrabold text-2xl ml-4 mt-4">Record Collection</h1>
             <table className='table'>
@@ -43,9 +54,10 @@ export default async function Collection({searchParams}: {searchParams: {page: s
                     </tr>)}
                 </tbody>
             </table>
-            <div>
-            <Pagination currentPage={parseInt(searchParams.page)} pageCount={9}/>
-            </div>
         </div>
+        <div>
+        <Pagination currentPage={parseInt(page)} pageCount={paginationData.pages} />
+        </div>
+        </>
     )
 }

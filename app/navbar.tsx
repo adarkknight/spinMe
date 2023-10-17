@@ -20,7 +20,7 @@ const Navbar = () => {
               <Link href='/home'>Home</Link>
             </li>
             <li>
-              <Link href='/collection'>Collection</Link>
+              <Link href='/collection?page=1'>Collection</Link>
             </li>
             <li>
               <Link href='/'>Logout</Link>
