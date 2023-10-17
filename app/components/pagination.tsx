@@ -21,12 +21,12 @@ const Pagination = ({
   return (
     <div className="join grid grid-cols-2">
     {currentPage === 1 &&
-    <div className="join-item btn btn-outline btn-disabled">Previous page</div> ||
-    <div className="join-item btn btn-outline" onClick={() => {changePage(currentPage - 1)}}>Previous page</div>
+    <button className="join-item btn btn-outline btn-disabled">Previous page</button> ||
+    <button className="join-item btn btn-outline" onClick={() => {changePage(currentPage - 1)}}>Previous page</button>
     }
     {currentPage >= pageCount &&
-    <div className="join-item btn btn-outline btn-disabled">Next page</div> ||
-    <div className="join-item btn btn-outline" onClick={() => {changePage(currentPage + 1)}}>Next page</div>
+    <button className="join-item btn btn-outline btn-disabled">Next page</button> ||
+    <button className="join-item btn btn-outline" onClick={() => {changePage(currentPage + 1)}}>Next page</button>
     }
   </div>
   )
