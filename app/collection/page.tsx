@@ -2,13 +2,13 @@ import React from 'react'
 import getAlbumData from '../api/getAlbumData'
 import { sort } from 'fast-sort';
 import Image from 'next/image';
-
+import Pagination from '../components/pagination';
 interface Album {
     artist: string;
     title: string;
     coverImage: string;
 }
-export default async function Collection() {
+export default async function Collection({searchParams}: {searchParams: {page: string}}) {
     const data: Album[] = await getAlbumData();
     const sortedData = sort(data).asc(a => a.artist);
     return (
@@ -43,6 +43,9 @@ export default async function Collection() {
                     </tr>)}
                 </tbody>
             </table>
+            <div>
+            <Pagination currentPage={parseInt(searchParams.page)} pageCount={9}/>
+            </div>
         </div>
     )
 }
