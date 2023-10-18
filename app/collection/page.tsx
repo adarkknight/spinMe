@@ -54,9 +54,8 @@ export default async function Collection({ searchParams }: { searchParams: { pag
                     </tr>)}
                 </tbody>
             </table>
-            <Pagination currentPage={parseInt(page)} pageCount={paginationData.pages} />
         </div>
-        
+        <Pagination currentPage={parseInt(page)} pageCount={paginationData.pages} />
         </>
     )
 }
