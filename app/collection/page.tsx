@@ -49,15 +49,14 @@ export default async function Collection({ searchParams }: { searchParams: { pag
                                 </div>
                             </div>
                         </td>
-                        <td>{album.artist}</td>
+                        <td className="font-semibold">{album.artist}</td>
                         <td>{album.title}</td>
                     </tr>)}
                 </tbody>
             </table>
+            <Pagination currentPage={parseInt(page)} pageCount={paginationData.pages} />
         </div>
-        <div>
-        <Pagination currentPage={parseInt(page)} pageCount={paginationData.pages} />
-        </div>
+        
         </>
     )
 }

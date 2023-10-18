@@ -19,14 +19,14 @@ const Pagination = ({
             router.push('?' + params.toString());
         }
   return (
-    <div className="join grid grid-cols-2">
+    <div className="join grid grid-cols-2 mb-2">
     {currentPage === 1 &&
-    <button className="join-item btn btn-outline btn-disabled">Previous page</button> ||
-    <button className="join-item btn btn-outline" onClick={() => {changePage(currentPage - 1)}}>Previous page</button>
+    <button className="join-item btn btn-outline btn-disabled">Previous</button> ||
+    <button className="join-item btn btn-outline" onClick={() => {changePage(currentPage - 1)}}>Previous</button>
     }
     {currentPage >= pageCount &&
-    <button className="join-item btn btn-outline btn-disabled">Next page</button> ||
-    <button className="join-item btn btn-outline" onClick={() => {changePage(currentPage + 1)}}>Next page</button>
+    <button className="join-item btn btn-outline btn-disabled">Next</button> ||
+    <button className="join-item btn btn-outline" onClick={() => {changePage(currentPage + 1)}}>Next</button>
     }
   </div>
   )
