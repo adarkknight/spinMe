@@ -22,12 +22,12 @@ const Pagination = ({
     <div className='flex flex-col items-center'>
       <div className="join grid grid-cols-2 mb-2">
         {currentPage === 1 &&
-          <button className="join-item btn btn-outline btn-disabled">Previous</button> ||
-          <button className="join-item btn btn-outline" onClick={() => { changePage(currentPage - 1) }}>Previous</button>
+          <button className="join-item btn btn-outline btn-disabled text-xs">Prev</button> ||
+          <button className="join-item btn btn-outline text-xs" onClick={() => { changePage(currentPage - 1) }}>Prev</button>
         }
         {currentPage >= pageCount &&
-          <button className="join-item btn btn-outline btn-disabled">Next</button> ||
-          <button className="join-item btn btn-outline" onClick={() => { changePage(currentPage + 1) }}>Next</button>
+          <button className="join-item btn btn-outline btn-disabled text-xs">Next</button> ||
+          <button className="join-item btn btn-outline text-xs" onClick={() => { changePage(currentPage + 1) }}>Next</button>
         }
       </div>
     </div>
