@@ -52,6 +52,7 @@ export default async function Collection({ searchParams }: { searchParams: { pag
                         <td className="font-semibold">{album.artist}</td>
                         <td>{album.title}</td>
                     </tr>)}
+                    <tr></tr>
                 </tbody>
             </table>
         </div>
