@@ -40,7 +40,7 @@ const getCollectionData = async function (page: string) {
         pages: data.pagination.pages,
         items: data.pagination.items
     };
-   
+
     const formattedData = releaseInfo.map((item: ResultItem): AlbumInfo => {
         return {
             artist: item.basic_information.artists[0].name,
@@ -50,7 +50,7 @@ const getCollectionData = async function (page: string) {
     })
 
     dataArray = [paginationData, formattedData];
-
+    
     return dataArray;
 }
 
