@@ -2,14 +2,33 @@
 import React from 'react'
 import Link from 'next/link';
 import Image from 'next/image';
+import { UserButton } from "@clerk/nextjs";
+import { usePathname } from 'next/navigation';
 const Navbar = () => {
+  const currentPage = usePathname();
+  const isHomePage = currentPage === '/home';
+  console.log('this is is is homepage', isHomePage);
   return (
     <div className="navbar bg-secondary text-neutral-content min-h-0 p-0">
       <div className="flex-1 p-1">
         <div className="font-inter normal-case font-extrabold text-xl">spinMe</div>
       </div>
+
       <div className="flex-none gap-2">
-        <div className="dropdown dropdown-end">
+      <button>
+
+      {!isHomePage ? (
+  <Link href='/home'>Home</Link>
+) : (
+  <Link href='/collection?page=1'>Collection</Link>
+)}
+     
+          </button>
+      <div className='p-1'>
+            <UserButton afterSignOutUrl='/'/>
+          </div>
+         
+        {/* <div className="dropdown dropdown-end">
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
               <Image src="/avatar.png" width='100' height='100' alt='avatar'></Image>
@@ -26,7 +45,7 @@ const Navbar = () => {
               <Link href='/'>Logout</Link>
             </li>
           </ul>
-        </div>
+        </div> */}
       </div>
     </div>
   )
