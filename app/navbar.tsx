@@ -7,7 +7,7 @@ import { usePathname } from 'next/navigation';
 const Navbar = () => {
   const currentPage = usePathname();
   const isHomePage = currentPage === '/home';
-  console.log('this is is is homepage', isHomePage);
+
   return (
     <div className="navbar bg-secondary text-neutral-content min-h-0 p-0">
       <div className="flex-1 p-1">
@@ -15,19 +15,27 @@ const Navbar = () => {
       </div>
 
       <div className="flex-none gap-2">
-      <button>
+        <button>
 
-      {!isHomePage ? (
-  <Link href='/home'>Home</Link>
-) : (
-  <Link href='/collection?page=1'>Collection</Link>
-)}
-     
-          </button>
-      <div className='p-1'>
-            <UserButton afterSignOutUrl='/'/>
-          </div>
-         
+          {!isHomePage ? (
+            <Link href='/home'>Home</Link>
+          ) : (
+            <Link href='/collection?page=1'>Collection</Link>
+          )}
+
+        </button>
+        <div className='p-1'>
+          <UserButton
+            // appearance={{
+            //   elements: {
+            //     card:
+            //       "card w-auto font-inter h-60",
+            //   },
+            
+            // }}
+            afterSignOutUrl='/' />
+        </div>
+
         {/* <div className="dropdown dropdown-end">
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
             <div className="w-10 rounded-full">
