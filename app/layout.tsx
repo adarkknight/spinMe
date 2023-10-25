@@ -1,9 +1,7 @@
-import './globals.css'
+import '../app/globals.css'
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import Footer from './footer'
-
-const inter = Inter({ subsets: ['latin'] })
+import { ClerkProvider } from '@clerk/nextjs'
 
 export const metadata: Metadata = {
   title: 'spinMe',
@@ -16,11 +14,13 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
+    <ClerkProvider>
     <html lang="en" data-theme="retro">
       <body className="min-h-screen flex flex-col items-center">
         {children}
         <Footer />
       </body>
     </html>
+    </ClerkProvider>
   )
 }

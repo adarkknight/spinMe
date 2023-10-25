@@ -29,8 +29,9 @@ const getCollectionData = async function (page: string) {
     const options = {
         headers: {
             "User-Agent": "SpinMe/0.1",
+            "Cache-Control": "no-store",
         },
-        "Cache-Control": "no-store",
+        
     };
     const response = await fetch(url, options);
     const data = await response.json();
@@ -50,7 +51,7 @@ const getCollectionData = async function (page: string) {
     })
 
     dataArray = [paginationData, formattedData];
-    
+
     return dataArray;
 }
 
