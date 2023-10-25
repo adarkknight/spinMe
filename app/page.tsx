@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
-import Button from './components/button'
+
 export default async function WelcomePage() {
   return (
     <div className="hero min-h-screen" style={{ backgroundImage: 'url(/blur.png)' }}>
