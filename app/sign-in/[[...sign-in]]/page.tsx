@@ -6,8 +6,7 @@ export default function Page() {
       <SignIn
         // appearance={{
         //   elements: {
-        //     // formButtonPrimary:
-        //     //   "bg-neutral hover:bg-slate-400 font-inter text-sm normal-case",
+          
         //     card:
         //       "w-auto h-80",
         //   },
