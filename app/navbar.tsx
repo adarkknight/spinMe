@@ -4,6 +4,8 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { UserButton } from "@clerk/nextjs";
 import { usePathname } from 'next/navigation';
+
+
 const Navbar = () => {
   const currentPage = usePathname();
   const isHomePage = currentPage === '/home';
@@ -25,15 +27,7 @@ const Navbar = () => {
 
         </button>
         <div className='p-1'>
-          <UserButton
-            // appearance={{
-            //   elements: {
-            //     card:
-            //       "card w-auto font-inter h-60",
-            //   },
-            
-            // }}
-            afterSignOutUrl='/' />
+          <UserButton afterSignOutUrl='/' />
         </div>
       </div>
     </div>
