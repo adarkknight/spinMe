@@ -14,7 +14,17 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider
+      appearance={{
+          elements: {
+            card:
+              "w-auto h-auto bg-neutral-content",
+            formButtonPrimary:
+              "bg-neutral",
+            userButtonPopoverCard: "w-60 bg-neutral-content"
+          },
+        }}
+    >
     <html lang="en" data-theme="retro">
       <body className="min-h-screen flex flex-col items-center">
         {children}
