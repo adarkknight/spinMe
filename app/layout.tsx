@@ -27,7 +27,9 @@ export default function RootLayout({
     >
     <html lang="en" data-theme="retro">
       <body className="min-h-screen flex flex-col items-center">
+        <main className="min-w-full flex-1">
         {children}
+        </main>
         <Footer />
       </body>
     </html>
