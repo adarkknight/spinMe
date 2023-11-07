@@ -16,8 +16,8 @@ interface AlbumInfo {
     artist: string;
 }
 
-const getAlbumData = async function () {
-    const url = `https://api.discogs.com/users/adarkknight/collection/folders/1/releases?per_page=${process.env.PER_PAGE_MAX}&token=${process.env.DISCOGS_TOKEN}`;
+const getAlbumData = async function (token: string, userId: string) {
+    const url = `https://api.discogs.com/users/${userId}/collection/folders/1/releases?per_page=${process.env.PER_PAGE_MAX}&token=${token}`;
     const options = {
         headers: {
             "User-Agent": "SpinMe/0.1",

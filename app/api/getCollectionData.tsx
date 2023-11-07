@@ -22,9 +22,9 @@ interface PaginationInfo {
     items: number,
 }
 
-const getCollectionData = async function (page: string) {
+const getCollectionData = async function (page: string, token: string, userId: string) {
     let dataArray = [];
-    const url = `https://api.discogs.com/users/adarkknight/collection/folders/1/releases?page=${page}&per_page=${process.env.PER_PAGE_MIN}&sort=artist&sort_order=asc&token=${process.env.DISCOGS_TOKEN}`;
+    const url = `https://api.discogs.com/users/${userId}/collection/folders/1/releases?page=${page}&per_page=${process.env.PER_PAGE_MIN}&sort=artist&sort_order=asc&token=${token}`;
 
     const options = {
         headers: {
