@@ -1,16 +1,33 @@
 import Hero from '../hero'
 import getAlbumData from '../api/getAlbumData';
 import { currentUser } from '@clerk/nextjs';
+import Placeholder from './placeholder';
 
 export default async function Home() {
+  let authorized = false;
+  let discogsToken;
+  let discogsUserId;
+  let data;
   const user = await currentUser();
-  const discogsToken = user?.privateMetadata.discogsToken as string;
-  const discogsUserId = user?.privateMetadata.discogsUserId as string;
-  const data = await getAlbumData(discogsToken, discogsUserId);
+  if (user?.privateMetadata.discogsToken && user?.privateMetadata.discogsUserId) {
+      authorized = true;
+      discogsToken = user?.privateMetadata.discogsToken as string;
+      discogsUserId = user?.privateMetadata.discogsUserId as string;
+      data = await getAlbumData(discogsToken, discogsUserId);
+  }
+
+  
   
   return (
     <main>
-      <Hero data={data} />
+      { authorized ? (
+        <Hero data={data} />
+      ) : (
+        <Placeholder />
+      )
+      
+      }
+      
     </main>
   )
 }

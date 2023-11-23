@@ -17,6 +17,7 @@ interface Pagination {
 }
 
 export default async function Collection({ searchParams }: { searchParams: { page: string } }) {
+    console.log('i am in the collection component');
     const user = await currentUser();
     const discogsToken = user?.privateMetadata.discogsToken as string;
     const discogsUserId = user?.privateMetadata.discogsUserId as string;
