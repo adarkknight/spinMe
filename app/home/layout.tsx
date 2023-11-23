@@ -9,7 +9,7 @@ interface Props {
 const HomeLayout = async function ({ children }: Props) {
     const user = await currentUser();
     let isAuthorized = false;
-    
+
     if (user?.privateMetadata.discogsToken && user?.privateMetadata.discogsUserId) {
         isAuthorized = true;
     }
