@@ -16,9 +16,9 @@ const Placeholder = () => {
                     <div className="text-center">
 
                         <div>
-                            <h1 className="text-3xl font-inter font-bold">Good Evening!</h1>
-                            <p className="font-inter text-sm py-2">Click the button below to sync up with Discogs!</p>
-                            <button className="btn btn-primary btn-sm text-xs modal-close-button font-inter italic font-bold" >Click here</button>
+                            <h1 className="text-3xl font-inter font-bold">Welcome!</h1>
+                            <p className="font-inter text-sm py-2">Connect your Discogs collection with spinMe by clicking below</p>
+                            <button className="btn btn-primary btn-sm text-xs modal-close-button font-inter italic font-bold" >Coming Soon</button>
                         </div>
                     </div>
                 </div>
