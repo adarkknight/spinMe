@@ -15,3 +15,20 @@ export interface AlbumInfo {
     title: string;
     artist: string;
 }
+
+export interface PaginationInfo {
+    page: string,
+    pages: number,
+    items: number,
+}
+
+export interface Album {
+    artist: string;
+    title: string;
+    coverImage: string;
+}
+
+export interface RecommendationUpdate {
+    updateAlbumData: (index: number) => void;
+    data: AlbumInfo[];
+}

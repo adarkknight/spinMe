@@ -1,26 +1,4 @@
-interface ResultItem {
-    basic_information: {
-        artists: (ArtistsEntity)[];
-        title: string;
-        cover_image: string;
-    }
-}
-
-interface ArtistsEntity {
-    name: string;
-}
-
-interface AlbumInfo {
-    coverImage: string;
-    title: string;
-    artist: string;
-}
-
-interface PaginationInfo {
-    page: string,
-    pages: number,
-    items: number,
-}
+import { ResultItem, AlbumInfo, PaginationInfo } from "./definitions";
 
 const getCollectionData = async function (page: string, token: string, userId: string) {
     let dataArray = [];

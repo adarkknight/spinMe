@@ -1,20 +1,11 @@
 import React from 'react'
-import getCollectionData from '../api/getCollectionData';
+import getCollectionData from '../lib/getCollectionData';
 import { sort } from 'fast-sort';
 import Image from 'next/image';
 import Pagination from '../components/pagination';
 import { currentUser } from '@clerk/nextjs';
-interface Album {
-    artist: string;
-    title: string;
-    coverImage: string;
-}
 
-interface Pagination {
-    page: number,
-    pages: number,
-    items: number,
-}
+import { PaginationInfo, Album } from '../lib/definitions';
 
 export default async function Collection({ searchParams }: { searchParams: { page: string } }) {
     const user = await currentUser();
@@ -25,7 +16,7 @@ export default async function Collection({ searchParams }: { searchParams: { pag
     const discogsUserId = user?.privateMetadata.discogsUserId as string;
     const page = searchParams.page;
     const data = await getCollectionData(page, discogsToken, discogsUserId);
-    const paginationData: Pagination = data[0];
+    const paginationData: PaginationInfo = data[0];
     const albumData: Album[] = data[1];
     const sortedData = sort(albumData).asc(a => a.artist);
     return (

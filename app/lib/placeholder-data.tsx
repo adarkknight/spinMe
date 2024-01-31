@@ -1,21 +1,3 @@
-// interface ResultItem {
-//     basic_information: {
-//         artists: (ArtistsEntity)[];
-//         title: string;
-//         cover_image: string;
-//     }
-// }
-
-// interface ArtistsEntity {
-//     name: string;
-// }
-
-// interface AlbumInfo {
-//     coverImage: string;
-//     title: string;
-//     artist: string;
-// }
-
 import { ResultItem, AlbumInfo } from "./definitions";
 
 const data = [
