@@ -3,6 +3,7 @@ import React from "react";
 import Link from "next/link";
 import { UserButton } from "@clerk/nextjs";
 import { usePathname } from "next/navigation";
+
 interface Props {
   authorized?: boolean;
 }

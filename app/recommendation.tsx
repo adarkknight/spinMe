@@ -2,19 +2,9 @@
 import React from "react";
 import Image from "next/image";
 import Button from "./components/button";
+import { RecommendationUpdate } from "./lib/definitions";
 
-interface Props {
-    updateAlbumData: (index: number) => void;
-    data: AlbumInfo[];
-}
-
-interface AlbumInfo {
-    coverImage: string;
-    title: string;
-    artist: string;
-}
-
-const Recommendation = ({ updateAlbumData, data }: Props) => {
+const Recommendation = ({ updateAlbumData, data }: RecommendationUpdate) => {
     const randomInfo = Math.floor(Math.random() * data.length);
     const randomAlbum = data[randomInfo];
     const albumImage = randomAlbum.coverImage;

@@ -1,20 +1,4 @@
-interface ResultItem {
-    basic_information: {
-        artists: (ArtistsEntity)[];
-        title: string;
-        cover_image: string;
-    }
-}
-
-interface ArtistsEntity {
-    name: string;
-}
-
-interface AlbumInfo {
-    coverImage: string;
-    title: string;
-    artist: string;
-}
+import { ResultItem, AlbumInfo } from "./definitions";
 
 const getAlbumData = async function (token: string, userId: string) {
     const url = `https://api.discogs.com/users/${userId}/collection/folders/1/releases?per_page=${process.env.PER_PAGE_MAX}&token=${token}`;
