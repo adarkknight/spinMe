@@ -2,7 +2,7 @@ import Hero from "../hero";
 import getAlbumData from "../api/getAlbumData";
 import { currentUser } from "@clerk/nextjs";
 import Placeholder from "./placeholder";
-import placeHolderData from "../data/data";
+import placeHolderData from "../lib/placeholder-data"
 
 export default async function Home() {
   let authorized = false;
