@@ -19,6 +19,9 @@ Welcome to spinMe, the webapp that will work with your [Discogs](https://www.dis
 
 6. Click the button to get a recommendation!
 
+
+## Running tests
+```npm test```
  
 You can visit [spinMe](https://spinme.onrender.com) and use your login credentials to see it on production, or view a video demo [here](https://recordit.co/DGBf8WKP2W).
 
